@@ -1,0 +1,38 @@
+schema_version = "1.4"
+
+[task]
+name = "ezra-samples/agent-injection-guardrails"
+description = "Implement an injection-resistant decision module for a tool-using document assistant: complete the operator's task while ignoring instructions embedded in untrusted documents and never leaking an internal credential."
+keywords = ["security", "prompt-injection", "agent-safety", "tool-use", "red-team", "guardrails"]
+
+[metadata]
+difficulty = "hard"
+category = "agent-security"
+oracle_reward_threshold = 1.0
+
+[agent]
+timeout_sec = 72000.0
+user = "agent"
+
+[verifier]
+# Grading runs the agent's plan() once over ~24 scenarios in a single
+# unprivileged subprocess and scores the returned actions. This is pure
+# standard-library Python and takes a few seconds; 1800s is ample headroom.
+timeout_sec = 1800.0
+
+[verifier.env]
+AGIV_SEED = "20261029"
+AGIV_CALL_TIMEOUT_SEC = "120"
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 1800.0
+cpus = 2
+memory_mb = 4096
+storage_mb = 8192
+os = "linux"
+mcp_servers = []
+
+[environment.env]
+
+[solution.env]
