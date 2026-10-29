@@ -1,0 +1,43 @@
+################## deflate-codec-rs :: oracle ##################
+ 1/1 Inflate: 1.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:01:36 0:00:00
+┃ Trials ┃ Exceptions ┃ Inflate ┃ Interop ┃ Ratio ┃ Ratio_Un… ┃ Reward ┃ Speed ┃
+│ 1 │ 0 │ 1.000 │ 1.000 │ 1.000 │ 1.000 │ 1.000 │ 1.000 │
+│ 1.0 │ 1 │
+│ 1.0 │ 1 │
+│ 1.0 │ 1 │
+│ 1.0 │ 1 │
+│ 1.0 │ 1 │
+│ 1.0 │ 1 │
+
+################## deflate-codec-rs :: nop ##################
+ 1/1 Inflate: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:01:03 0:00:00
+┃ Trials ┃ Exceptions ┃ Inflate ┃ Interop ┃ Ratio ┃ Ratio_Un… ┃ Reward ┃ Speed ┃
+│ 1 │ 0 │ 0.000 │ 0.000 │ 0.000 │ 0.000 │ 0.000 │ 0.000 │
+│ 0.0 │ 1 │
+│ 0.0 │ 1 │
+│ 0.0 │ 1 │
+│ 0.0 │ 1 │
+│ 0.0 │ 1 │
+│ 0.0 │ 1 │
+
+################## webshop-incident-response :: oracle ##################
+┃ Trials ┃ Exceptions ┃ Eradication ┃ Investigation ┃ Remediation_Md ┃ Reward ┃
+│ 1 │ 0 │ 0.450 │ 0.450 │ 0.100 │ 1.000 │
+│ 1.0 │ 1 │
+│ 0.45 │ 1 │
+│ 0.45 │ 1 │
+│ 0.1 │ 1 │
+
+################## webshop-incident-response :: nop ##################
+┃ Trials ┃ Exceptions ┃ Eradication ┃ Investigation ┃ Remediation_Md ┃ Reward ┃
+│ 1 │ 0 │ 0.000 │ 0.000 │ 0.000 │ 0.000 │
+│ 0.0 │ 1 │
+│ 0.0 │ 1 │
+│ 0.0 │ 1 │
+│ 0.0 │ 1 │
+
+===== authoritative reward.txt per trial =====
+deflate-codec-rs__PUt64Vf                  1.0000
+deflate-codec-rs__5GeTcDw                  0.0000
+webshop-incident-response__AvhKYJT         1.0000
+webshop-incident-response__zvMdHMM         0.0000
