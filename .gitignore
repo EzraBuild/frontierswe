@@ -1,0 +1,12 @@
+# Harbor run outputs / job dirs
+tools/harbor-out/jobs/
+**/jobs/
+# Rust build output (builds happen in Docker, never commit local target/)
+target/
+**/target/
+# Python
+__pycache__/
+*.pyc
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,13 @@
+#!/bin/bash
+# Verifier entry point (Harbor runs this as root after the agent phase).
+# All grading logic lives in verify.py next to this file.
+export PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export RUSTUP_HOME="${RUSTUP_HOME:-/usr/local/rustup}"
+mkdir -p /logs/verifier
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
+/usr/bin/python3 -I "$HERE/verify.py"
+# Belt and braces: never leave the reward file missing.
+if [ ! -s /logs/verifier/reward.txt ]; then
+  echo "0.0" > /logs/verifier/reward.txt
+fi
+exit 0

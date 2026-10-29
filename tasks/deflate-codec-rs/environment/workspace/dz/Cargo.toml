@@ -1,0 +1,13 @@
+[package]
+name = "dz"
+version = "0.1.0"
+edition = "2021"
+description = "Dependency-free DEFLATE / zlib / gzip codec"
+
+[dependencies]
+
+[profile.release]
+opt-level = 3
+debug = false
+lto = true
+codegen-units = 1

@@ -1,0 +1,40 @@
+schema_version = "1.4"
+
+[task]
+name = "ezra-samples/deflate-codec-rs"
+description = "Implement a dependency-free DEFLATE/zlib/gzip compressor and decompressor in Rust that interoperates with zlib and matches its level-6 ratio."
+keywords = ["rust", "compression", "deflate", "zlib", "gzip", "codec-reimplementation", "huffman", "lz77"]
+
+[metadata]
+difficulty = "very_hard"
+category = "codec-reimplementation"
+oracle_reward_threshold = 1.0
+
+[agent]
+timeout_sec = 72000.0
+user = "agent"
+
+[verifier]
+# Measured: rebuild ~20s, ~330 decode cases + ~200 encode cases over a ~35 MiB
+# corpus take 2-4 minutes with a reasonable codec. verify.py stops grading at
+# DZ_DEADLINE_SEC=2400 and caps each invocation at 120s, so 3600s leaves room
+# for a slow but correct candidate plus scoring and file writes.
+timeout_sec = 3600.0
+
+[verifier.env]
+DZ_SEED = "20261029"
+DZ_DEADLINE_SEC = "2400"
+DZ_CALL_TIMEOUT_SEC = "120"
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 1800.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 20480
+os = "linux"
+mcp_servers = []
+
+[environment.env]
+
+[solution.env]
